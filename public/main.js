@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await fetch('/users')
             if (response.status === 201) {
-                const users = await response.json()
+                const { users } = await response.json()
                 userList.innerHTML = ''
 
                 users.forEach(user => {

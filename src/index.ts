@@ -21,7 +21,7 @@ router.post("/users", (req, res) => {
 })
 
 router.get('/users', (req, res) => {
-    res.status(201).json(users)
+    res.status(201).json({users})
 })
 
 router.get('/hello', (req, res) => {
