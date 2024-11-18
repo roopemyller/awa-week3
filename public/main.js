@@ -1,6 +1,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const userForm = document.getElementById("userForm")
+    const getUsersButton = document.getElementById("getUsers")
+    const userList = document.getElementById("userList")
+
     userForm.addEventListener("submit", async (e) => {
         e.preventDefault()
         let name = document.getElementById("name").value 
@@ -20,4 +23,24 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("error: " + error.message)
         }
     })  
+
+    getUsersButton.addEventListener("click", async () => {
+        try {
+            const response = await fetch('/users')
+            if (response.status === 201) {
+                const users = await response.json()
+                userList.innerHTML = ''
+
+                users.forEach(user => {
+                    const li = document.createElement("li")
+                    li.textContent = `${user.name} - ${user.email}`
+                    userList.append(li)
+                });
+            }else {
+                console.log("Failed to fetch users")
+            }
+        }catch (error) {
+            console.error("Error: ", error.message)
+        }
+    })
 })

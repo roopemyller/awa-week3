@@ -20,6 +20,10 @@ router.post("/users", (req, res) => {
     res.json({message: "User successfully added"})
 })
 
+router.get('/users', (req, res) => {
+    res.status(201).json(users)
+})
+
 router.get('/hello', (req, res) => {
     res.json({msg: "Hello world!"})
 })
