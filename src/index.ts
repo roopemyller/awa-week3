@@ -19,11 +19,11 @@ router.post("/users", (req, res) => {
     const newUser: TUser = {name, email}
     users.push(newUser)
 
-    res.status(201).json({message: "User successfully added"})
+    res.json({message: "User successfully added"})
 })
 
 router.get('/users', (req, res) => {
-    res.status(200).json({ users })
+    res.status(201).json({ users })
 })
 
 router.get('/hello', (req, res) => {
