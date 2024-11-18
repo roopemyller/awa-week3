@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             const result = await response.json()
             alert(result.message)
+            userForm.reset()
         }catch(error){
             console.log("error: " + error.message)
         }
