@@ -23,7 +23,7 @@ router.post("/users", (req, res) => {
 })
 
 router.get('/users', (req, res) => {
-    res.status(201).json({ users })
+    res.status(200).json({ users })
 })
 
 router.get('/hello', (req, res) => {

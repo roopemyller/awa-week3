@@ -13,7 +13,7 @@ router.post("/users", (req, res) => {
     res.status(201).json({ message: "User successfully added" });
 });
 router.get('/users', (req, res) => {
-    res.status(201).json({ users });
+    res.status(200).json({ users });
 });
 router.get('/hello', (req, res) => {
     res.json({ msg: "Hello world!" });
